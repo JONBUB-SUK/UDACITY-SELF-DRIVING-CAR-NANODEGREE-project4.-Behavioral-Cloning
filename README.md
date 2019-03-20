@@ -194,6 +194,37 @@ model learned data from image that has background, and it think I had to turn le
 So by apply cropping, it can work more generally
 
 
+5. Small parameters
+
+At least in self driving car, size of parameter is important
+
+Because large size of parameter needs long time to calculate in real time
+
+So I would like to revisit implementing this project to make less parameters
+
+
+6. Discarded data
+
+(jeremy-shannon)
+
+
+7. About velocity
+
+In this project, I cannot control velocity
+
+The only factor I can control was steering angle at background image
+
+But thinking in real driving situation, if someone want to sharp turn, he may firstly slow down car speed
+
+So fundamentally this simulator has limit to sharp turn
+
+If dealing with especially sharp turn by using this model,
+
+it will need other method like enlarge steering angle parameters..
+
+
+
+
 
 
 
