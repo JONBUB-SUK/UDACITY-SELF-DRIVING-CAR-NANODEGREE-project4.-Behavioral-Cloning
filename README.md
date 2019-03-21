@@ -21,7 +21,17 @@ After trying various deeplearning models and methods, finally my car drove so we
 
 # Background Learning
 
-(NEED PICTURE)
+* Keras
+ - How to handle Keras to use Deep Learning
+ 
+* Transfer Learning
+ - History and characteristics of various CNN architectures
+ - About IMAGENET
+ - AlexNet
+ - VGG
+ - GoogLeNet
+ - ResNet
+ 
 
 
 # Approach
