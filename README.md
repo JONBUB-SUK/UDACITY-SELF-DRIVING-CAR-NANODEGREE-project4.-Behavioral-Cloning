@@ -12,7 +12,7 @@
 
 [image2-1]: ./images/NVIDIA_CNN_architecture.png "NVIDIA"
 
-[image3-1]: ./images/동영상_스크샷.png "RESULT VIDEO"
+[image3-1]: ./images/동영상_스크릿샷.png "RESULT VIDEO"
 
 # Introduction
 
