@@ -4,11 +4,11 @@
 
 [//]: # (Image References)
 
-[image1-1]: ./images/1. 1 Percaptron, Lambda.jpg "RESULT1"
-[image1-2]: ./images/2. LeNet.jpg "RESULT2"
-[image1-3]: ./images/3. Center,Left,Right images.jpg "RESULT3"
-[image1-4]: ./images/4. Cropping.jpg "RESULT4"
-[image1-5]: ./images/5. NVIDIA architecture.jpg "RESULT5"
+[image1-1]: ./images/1. 1 Percaptron, Lambda.JPG "RESULT1"
+[image1-2]: ./images/2. LeNet.JPG "RESULT2"
+[image1-3]: ./images/3. Center,Left,Right images.JPG "RESULT3"
+[image1-4]: ./images/4. Cropping.JPG "RESULT4"
+[image1-5]: ./images/5. NVIDIA architecture.JPG "RESULT5"
 
 [image2-1]: ./images/NVIDIA CNN architecture.png "NVIDIA"
 
