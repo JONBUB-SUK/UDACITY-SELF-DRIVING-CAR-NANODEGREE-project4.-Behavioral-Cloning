@@ -1,5 +1,19 @@
 # UDACITY-SELF-DRIVING-CAR-NANODEGREE-project5.-Behavioral-Cloning
 
+
+
+[//]: # (Image References)
+
+[image1-1]: ./images/1. 1 Percaptron, Lambda.png "RESULT1"
+[image1-2]: ./images/2. LeNet.png "RESULT2"
+[image1-3]: ./images/3. Center,Left,Right images.png "RESULT3"
+[image1-4]: ./images/4. Cropping.png "RESULT4"
+[image1-5]: ./images/5. NVIDIA architecture.png "RESULT5"
+
+[image2-1]: ./images/NVIDIA CNN architecture.png "NVIDIA"
+
+[image3-1]: ./images/결과 스크린샷.png "RESULT VIDEO"
+
 # Introduction
 
 The object of this project is drive car simulation autonomously by using deeplearning
@@ -48,7 +62,7 @@ Of course it need many reinforcement
 
 Its training data loss was 1.963 just after 1 epoch
 
-(LOSS FUNCTION SCREENSHOT)
+![alt text][image1-1]
 
 
 2. Using LeNet architecture (only using center camera images)
@@ -67,8 +81,7 @@ Its training loss was 0.0156 after 5 epochs
 
 Loss is far less than first model!
 
-
-(LOSS FUNCTION SCREENSHOT)
+![alt text][image1-2]
 
 
 3. Adding left, right camera images to LeNet
@@ -93,8 +106,7 @@ Assigning larger correction_factor may makes car turn more dynamic
 
 As a result, training loss was 0.0097 after 3 epochs
 
-
-(LOSS FUNCTION SCREENSHOT)
+![alt text][image1-3]
 
 
 4. Adding cropping2D to LeNet
@@ -113,13 +125,14 @@ As a result, training loss was 0.016 after 3 epochs which is higher then before
 
 But car drove better so I concluded getting smaller loss doesn’t make sure driving better
 
-
-(LOSS FUNCTION SCREENSHOT)
+![alt text][image1-4]
 
 
 5. Using NVIDIA CNN architecture
 
 I just used architecture published in NVIDIA homepage they used when used their autonomous car
+
+![alt text][image2-1]
 
 And not a surprisingly, it drove so well
 
@@ -127,8 +140,7 @@ It finished one lap without even escaping from center line
 
 As a result, training loss was 0.014 after 3 epochs
 
-
-(LOSS FUNCTION SCREENSHOT)
+![alt text][image1-5]
 
 
 6. Adding a generator
@@ -145,7 +157,9 @@ It gave me a challenge why it did slow down
 
 # Results
 
-(NEED NVIDIA ARCHITECTURE PICTURE)
+![alt text][image3-1]
+
+
 
 
 # Conclusion & Discussion
