@@ -62,7 +62,6 @@ Of course it need many reinforcement
 
 Its training data loss was 1.963 just after 1 epoch
 
-` screenshot`
 
 ![alt text][image1-1]
 
@@ -82,6 +81,7 @@ Maybe its because it doesn't have data when get out of line
 Its training loss was 0.0156 after 5 epochs
 
 Loss is far less than first model!
+
 
 ![alt text][image1-2]
 
@@ -108,6 +108,7 @@ Assigning larger correction_factor may makes car turn more dynamic
 
 As a result, training loss was 0.0097 after 3 epochs
 
+
 ![alt text][image1-3]
 
 
@@ -127,6 +128,7 @@ As a result, training loss was 0.016 after 3 epochs which is higher then before
 
 But car drove better so I concluded getting smaller loss doesn’t make sure driving better
 
+
 ![alt text][image1-4]
 
 
@@ -141,6 +143,7 @@ And not a surprisingly, it drove so well
 It finished one lap without even escaping from center line
 
 As a result, training loss was 0.014 after 3 epochs
+
 
 ![alt text][image1-5]
 
@@ -158,6 +161,7 @@ It gave me a challenge why it did slow down
 
 
 # Results
+
 
 ![alt text][image3-1]
 
@@ -229,12 +233,7 @@ Because large size of parameter needs long time to calculate in real time
 So I would like to revisit implementing this project to make less parameters
 
 
-### 6. Discarded data
-
-(jeremy-shannon)
-
-
-### 7. About velocity
+### 6. About velocity
 
 In this project, I cannot control velocity
 
