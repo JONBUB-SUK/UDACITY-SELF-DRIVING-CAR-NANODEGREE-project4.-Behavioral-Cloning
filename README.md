@@ -62,6 +62,8 @@ Of course it need many reinforcement
 
 Its training data loss was 1.963 just after 1 epoch
 
+` <screenshot>
+
 ![alt text][image1-1]
 
 
