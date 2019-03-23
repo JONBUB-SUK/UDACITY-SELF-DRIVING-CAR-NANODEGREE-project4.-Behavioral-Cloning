@@ -35,10 +35,10 @@ After trying various deeplearning models and methods, finally my car drove so we
 
 # Background Learning
 
-* Keras
+### Keras
  - How to handle Keras to use Deep Learning
  
-* Transfer Learning
+### Transfer Learning
  - History and characteristics of various CNN architectures
  - About IMAGENET
  - AlexNet
@@ -50,7 +50,7 @@ After trying various deeplearning models and methods, finally my car drove so we
 
 # Approach
 
-1. Just 1 perceptron and Lambda Normalization (only using center camera images)
+### 1. Just 1 perceptron and Lambda Normalization (only using center camera images)
 
 I did not expect good result
 
@@ -65,7 +65,7 @@ Its training data loss was 1.963 just after 1 epoch
 ![alt text][image1-1]
 
 
-2. Using LeNet architecture (only using center camera images)
+### 2. Using LeNet architecture (only using center camera images)
 
 In fact, I expected this result a little, because its LeNet!!
 
@@ -84,7 +84,7 @@ Loss is far less than first model!
 ![alt text][image1-2]
 
 
-3. Adding left, right camera images to LeNet
+### 3. Adding left, right camera images to LeNet
 
 This code have at least 2 benefits 
 
@@ -109,7 +109,7 @@ As a result, training loss was 0.0097 after 3 epochs
 ![alt text][image1-3]
 
 
-4. Adding cropping2D to LeNet
+### 4. Adding cropping2D to LeNet
 
 Just adding Cropping made car drive well!
 
@@ -128,7 +128,7 @@ But car drove better so I concluded getting smaller loss doesn’t make sure dri
 ![alt text][image1-4]
 
 
-5. Using NVIDIA CNN architecture
+### 5. Using NVIDIA CNN architecture
 
 I just used architecture published in NVIDIA homepage they used when used their autonomous car
 
@@ -143,7 +143,7 @@ As a result, training loss was 0.014 after 3 epochs
 ![alt text][image1-5]
 
 
-6. Adding a generator
+### 6. Adding a generator
 
 Fidding all data at once is borne to GPU, so devide data by fit_generator
 
@@ -164,7 +164,7 @@ It gave me a challenge why it did slow down
 
 # Conclusion & Discussion
 
-1. data set
+### 1. data set
 
 In fact, at starting this project, my intent was gathering data from 1 normal lap, 1 inverse lap, returning from out of line,
 
@@ -183,7 +183,7 @@ Maybe that's because it did not go even out of center line
 If it drove out of line, it cannot return to line, because it has no data to return
 
 
-2. greatfulness of pre-trained architecture and parameters
+### 2. Greatfulness of pre-trained architecture and parameters
 
 I have got trouble trying various model to drive normally (I think it maybe easy)
 
@@ -192,7 +192,7 @@ And just using varified NVIDIA's architecture and parameter, it drove surprrisin
 That is trained and tuned at real environment and it worked so well at similar situation
 
 
-3. Normalization
+### 3. Normalization
 
 At least in this project, maybe at deep learning problem in images, normalization is very important
 
@@ -205,7 +205,7 @@ It has effect to emphasize difference between neighbor pixels
 In effect, doing normalization or not hadbig difference
 
 
-4. About cropping
+### 4. About cropping
 
 Overfitting is important subject in deep learning
 
@@ -218,7 +218,7 @@ model learned data from image that has background, and it think I had to turn le
 So by apply cropping, it can work more generally
 
 
-5. Small parameters
+### 5. Small parameters
 
 At least in self driving car, size of parameter is important
 
@@ -227,12 +227,12 @@ Because large size of parameter needs long time to calculate in real time
 So I would like to revisit implementing this project to make less parameters
 
 
-6. Discarded data
+### 6. Discarded data
 
 (jeremy-shannon)
 
 
-7. About velocity
+### 7. About velocity
 
 In this project, I cannot control velocity
 
