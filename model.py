@@ -5,11 +5,6 @@ from scipy import ndimage
 
 lines = []
 
-'''
-학습 데이터를 sample 데이터를 쓴 이유는 직접 시뮬레이션을 돌렸더니 너무 느려서 도저히 할수가 없었음
-대충 샘플 데이터를 보니 라인 중간에서 잘 주행을 한거같아서 좋은 데이터이긴 한데
-라인을 완전히 벗어났을때 되돌아오는 방법을 학습시킬 수 없다는게 한계임
-'''
 with open('/opt/carnd_p3/data/driving_log.csv') as csvfile:
     reader = csv.reader(csvfile)
     for line in reader:
@@ -88,14 +83,6 @@ model.add(Dense(1))
 
 
 # <This is for cropping non essential part of image like background, hood>
-'''
-cropping 의 효과
-이 전까지는 다리를 못건넜는데 cropping 하고나서 다리를 매우 잘 건넜음, 부가적으로 학습시키는데 걸리는 시간도 줄어듦
-이유를 생각해봤는데 시간 줄어드는거야 데이터 크기가 줄어드니까 당연한거고
-배경을 제거하면 차선만 남으니까 얘가 어떤 상황인지 판단하기가 더 유용한듯
-즉 배경까지 있으면 이 상황이 학습한 이미지중 어떤거랑 같은건지 판단하기 위한 조건들이 많은데
-배경을 제거하니까 같은 상황임을 판단하기 용이해진듯
-'''
 
 '''
 # <This is second model using LeNet>
