@@ -63,6 +63,24 @@ Of course it need many reinforcement
 Its training data loss was 1.963 just after 1 epoch
 
 
+##### This is code
+
+```python
+
+model = Sequential()
+model.add(Lambda(lambda x: x/255-0.5, input_shape=(160,320,3)))
+model.add(Flatten())
+model.add(Dense(1))
+
+model.compile(loss='mse', optimizer='adam')
+model.fit(X_train, Y_train, validation_split=0.2, shuffle=True, nb_epoch=3)
+
+model.save('model.h5')
+
+```
+
+
+
 ![alt text][image1-1]
 
 
@@ -81,6 +99,28 @@ Maybe its because it doesn't have data when get out of line
 Its training loss was 0.0156 after 5 epochs
 
 Loss is far less than first model!
+
+
+##### This is code
+
+```python
+
+model = Sequential()
+model.add(Lambda(lambda x: x/255-0.5, input_shape=(160,320,3)))
+model.add(Conv2D(10,(5,5), activation = 'relu'))
+model.add(MaxPooling2D())
+model.add(Conv2D(15,(5,5), activation = 'relu'))
+model.add(MaxPooling2D())
+model.add(Flatten())
+model.add(Dense(120))
+model.add(Dense(84))
+model.add(Dense(1))
+
+model.compile(loss='mse', optimizer='adam')
+model.fit(X_train, Y_train, validation_split=0.2, shuffle=True, nb_epoch=3)
+
+model.save('model.h5')
+```
 
 
 ![alt text][image1-2]
@@ -109,6 +149,36 @@ Assigning larger correction_factor may makes car turn more dynamic
 As a result, training loss was 0.0097 after 3 epochs
 
 
+##### This is code
+
+```python
+
+for line in lines:
+    for i in range(3):
+        correction_factor = 0.2
+        source_path = line[i]
+        file_name = source_path.split('/')[-1]
+        current_path = '/opt/carnd_p3/data/IMG/' + file_name
+        image = ndimage.imread(current_path)
+
+        images.append(image)
+        
+        if i==0:
+            measurement = float(line[3])
+            measurements.append(measurement)
+        elif i==1:
+            measurement = float(line[3]) + correction_factor
+            measurements.append(measurement)
+        elif i==2:
+            measurement = float(line[3]) - correction_factor
+            measurements.append(measurement)
+            
+X_train = np.array(images)
+Y_train = np.array(measurements)
+            
+```
+
+
 ![alt text][image1-3]
 
 
@@ -129,6 +199,30 @@ As a result, training loss was 0.016 after 3 epochs which is higher then before
 But car drove better so I concluded getting smaller loss doesn’t make sure driving better
 
 
+##### This is code
+
+```python
+
+model = Sequential()
+model.add(Lambda(lambda x: x/255-0.5, input_shape=(160,320,3)))
+model.add(Cropping2D(cropping=((70,25),(0,0))))
+model.add(Conv2D(10,(5,5), activation = 'relu'))
+model.add(MaxPooling2D())
+model.add(Conv2D(15,(5,5), activation = 'relu'))
+model.add(MaxPooling2D())
+model.add(Flatten())
+model.add(Dense(120))
+model.add(Dense(84))
+model.add(Dense(1))
+
+model.compile(loss='mse', optimizer='adam')
+model.fit(X_train, Y_train, validation_split=0.2, shuffle=True, nb_epoch=3)
+
+model.save('model.h5')
+```
+
+
+
 ![alt text][image1-4]
 
 
@@ -145,7 +239,34 @@ It finished one lap without even escaping from center line
 As a result, training loss was 0.014 after 3 epochs
 
 
+##### This is code
+
+```python
+
+model = Sequential()
+model.add(Lambda(lambda x: x/255-0.5, input_shape=(160,320,3)))
+model.add(Cropping2D(cropping=((70,25),(0,0))))
+model.add(Conv2D(24,(5,5), strides = (2,2), padding = 'valid', activation = 'relu'))
+model.add(Conv2D(36,(5,5), strides = (2,2), padding = 'valid', activation = 'relu'))
+model.add(Conv2D(48,(5,5), strides = (2,2), padding = 'valid', activation = 'relu'))
+model.add(Conv2D(64,(3,3), strides = (1,1), padding = 'valid', activation = 'relu'))
+model.add(Conv2D(64,(3,3), strides = (1,1), padding = 'valid', activation = 'relu'))
+model.add(Flatten())
+model.add(Dense(100))
+model.add(Dense(50))
+model.add(Dense(10))
+model.add(Dense(1))
+
+model.compile(loss='mse', optimizer='adam')
+model.fit(X_train, Y_train, validation_split=0.2, shuffle=True, nb_epoch=3)
+
+model.save('model.h5')
+```
+
 ![alt text][image1-5]
+
+
+
 
 
 ### 6. Adding a generator
@@ -157,6 +278,83 @@ I devided by 32 data at one batch but it makes making result more slow
 So I decided not to use ganerator
 
 It gave me a challenge why it did slow down
+
+
+##### This is code
+
+```python
+
+
+def generator(samples, batch_size=32):
+    num_samples = len(samples)
+    while 1: # Loop forever so the generator never terminates
+        #shuffle(samples)
+        for offset in range(0, num_samples, batch_size):
+            
+            batch_samples = samples[offset:offset+batch_size]
+
+            images = []
+            angles = []
+            
+            for batch_sample in batch_samples:
+                for i in range(3):
+                    source_path = batch_sample[i]
+                    file_name = source_path.split('/')[-1]
+                    current_path = '/opt/carnd_p3/data/IMG/' + file_name
+                    image = ndimage.imread(current_path)
+                    images.append(image)
+                    
+                    correction_factor = 0.2   # For using left&right camera image
+                    if i==0: # Center camera
+                        angle = float(batch_sample[3])
+                        angles.append(angle)
+                    elif i==1: # Left camera
+                        angle = float(batch_sample[3]) + correction_factor
+                        angles.append(angle)                        
+                    elif i==2: # Right camera
+                        angle = float(batch_sample[3]) - correction_factor
+                        angles.append(angle)      
+                        
+            # trim image to only see section with road
+            X_train = np.array(images)
+            y_train = np.array(angles)
+            yield sklearn.utils.shuffle(X_train, y_train)
+
+# compile and train the model using the generator function
+train_generator = generator(train_samples, batch_size=32)
+validation_generator = generator(validation_samples, batch_size=32)
+
+
+
+from keras.models import Sequential
+from keras.layers import Flatten, Dense, Lambda, MaxPooling2D, Conv2D, Cropping2D
+
+# <This is third model using NVIDIA CNN architecture>
+model = Sequential()
+model.add(Lambda(lambda x: x/255-0.5, input_shape=(160,320,3)))
+model.add(Cropping2D(cropping=((70,25),(0,0))))
+model.add(Conv2D(24,(5,5), strides = (2,2), padding = 'valid', activation = 'relu'))
+model.add(Conv2D(36,(5,5), strides = (2,2), padding = 'valid', activation = 'relu'))
+model.add(Conv2D(48,(5,5), strides = (2,2), padding = 'valid', activation = 'relu'))
+model.add(Conv2D(64,(3,3), strides = (1,1), padding = 'valid', activation = 'relu'))
+model.add(Conv2D(64,(3,3), strides = (1,1), padding = 'valid', activation = 'relu'))
+model.add(Flatten())
+model.add(Dense(100))
+model.add(Dense(50))
+model.add(Dense(10))
+model.add(Dense(1))
+
+model.compile(loss='mse', optimizer='adam')
+
+model.fit_generator(train_generator, 
+                    steps_per_epoch = len(train_samples), 
+                    validation_data = validation_generator, 
+                    validation_steps = len(validation_samples), nb_epoch=3)
+
+# model.fit(X_train, Y_train, validation_split=0.2, shuffle=True, nb_epoch=3)
+
+model.save('model_generator.h5')
+```
 
 
 
