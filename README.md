@@ -446,7 +446,13 @@ If dealing with especially sharp turn by using this model,
 it will need other method like enlarge steering angle parameters..
 
 
+### 7. Convenience of Keras compared to Tensorflow
 
+In fact at the before project using tensorflow, it was so strange concept like tensor and its usage
+
+But unlikely tensorflow, Keras is so easy to use and intuitive to understand
+
+After this moment I feel like using Keras at every deep learning project
 
 
 
