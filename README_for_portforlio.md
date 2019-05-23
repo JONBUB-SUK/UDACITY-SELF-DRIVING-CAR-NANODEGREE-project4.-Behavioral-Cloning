@@ -23,15 +23,22 @@ After trying various deeplearning models and methods, finally my car drove so we
 ## 2. Related Study
 
 #### 1) Keras
- ① How to handle Keras to use Deep Learning
+
+① How to handle Keras to use Deep Learning
  
 #### 2) Transfer Learning
- ① History and characteristics of various CNN architectures
- ② About IMAGENET
- ③ AlexNet
- ④ VGG
- ⑤ GoogLeNet
- ⑥ ResNet
+
+① History and characteristics of various CNN architectures
+ 
+② About IMAGENET
+
+③ AlexNet
+
+④ VGG
+
+⑤ GoogLeNet
+
+⑥ ResNet
  
 
 ## 3. Details
