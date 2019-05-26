@@ -225,7 +225,7 @@ Validation loss : 0.0202
 
 #### 5) Using NVIDIA CNN architecture
 
-I just used architecture published in NVIDIA homepage they used when used their autonomous car
+I just used architecture published in NVIDIA homepage they used when making their autonomous car
 
 ![alt text][image2-1]
 
