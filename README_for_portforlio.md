@@ -227,7 +227,7 @@ Validation loss : 0.0202
 
 I just used architecture published in NVIDIA homepage they used when making their autonomous car
 
-<img src="./images/NVIDIA_CNN_architecture.png" width="400">
+<img src="./images/NVIDIA_CNN_architecture.png" width="300">
 
 And not a surprisingly, it drove so well
 
