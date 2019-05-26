@@ -181,7 +181,7 @@ Training loss : 0.0097
 
 Validation loss : 0.0114
 
-#### 4) Adding cropping2D to LeNet
+#### 4) Cropping not useful part of images
 
 Just adding Cropping made car drive well!
 
