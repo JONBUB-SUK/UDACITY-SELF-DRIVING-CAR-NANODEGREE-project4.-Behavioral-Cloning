@@ -227,7 +227,7 @@ Validation loss : 0.0202
 
 I just used architecture published in NVIDIA homepage they used when making their autonomous car
 
-![alt text][image2-1]
+<img src="./images/NVIDIA_CNN_architecture.png" width="400">
 
 And not a surprisingly, it drove so well
 
@@ -348,10 +348,9 @@ model.save('model_generator.h5')
 
 ## 4.Results
 
+This is a gif images for result video
 
 ![alt text][image3-1]
-
-
 
 
 ## 5.Discussion
