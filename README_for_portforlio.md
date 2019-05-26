@@ -25,9 +25,9 @@ By driving test mode, simulator saved my steering action in csv file
 
 So after one lap, I've got important information that what kind of background I turned steering
 
-After one lap, there are almost 24,000 images (including left & right images)  and its steering angle informations
+After one lap, there are almost 24,000 images (including left & right images) with its steering angle informations
 
-I used KERAS deep learning framework to my model learn
+I used KERAS deep learning framework to make my model learn
 
 After trying various deeplearning models and methods, finally my car drove so well, even not get out of center line
 
