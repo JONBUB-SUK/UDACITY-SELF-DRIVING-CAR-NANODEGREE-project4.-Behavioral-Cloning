@@ -136,7 +136,7 @@ Large amount of data have benefits not to be overfitted
 
 Secondly, By adding images leaning toward left, right we can train car returning to center
 
-`correction_factor ± steering angle`
+`steering angle = correction_factor ± steering angle`
 
 And surprisingly, by just adding left,right camera images made car drive through bridge well!
 
