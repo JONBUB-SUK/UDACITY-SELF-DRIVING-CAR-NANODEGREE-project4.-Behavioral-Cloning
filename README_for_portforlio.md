@@ -348,7 +348,7 @@ model.save('model_generator.h5')
 
 ## 4.Results
 
-This is a gif images for result video
+This is a gif image for result video
 
 ![alt text][image3-1]
 
