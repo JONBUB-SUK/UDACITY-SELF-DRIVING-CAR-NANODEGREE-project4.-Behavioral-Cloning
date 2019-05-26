@@ -265,13 +265,9 @@ Validation loss : 0.0222
 
 #### 6) Adding a generator
 
-Fidding all data at once is borne to GPU, so devide data by fit_generator
+Fidding all data at once is burden to GPU, so devide data by fit_generator
 
-I devided by 32 data at one batch but it makes making result more slow
-
-So I decided not to use ganerator
-
-It gave me a challenge why it did slow down
+I devided by 32 data at one batch
 
 ```python
 def generator(samples, batch_size=32):
@@ -303,17 +299,13 @@ def generator(samples, batch_size=32):
                     elif i==2: # Right camera
                         angle = float(batch_sample[3]) - correction_factor
                         angles.append(angle)      
-                        
-            # trim image to only see section with road
+
             X_train = np.array(images)
             y_train = np.array(angles)
             yield sklearn.utils.shuffle(X_train, y_train)
 
-# compile and train the model using the generator function
 train_generator = generator(train_samples, batch_size=32)
 validation_generator = generator(validation_samples, batch_size=32)
-
-
 
 from keras.models import Sequential
 from keras.layers import Flatten, Dense, Lambda, MaxPooling2D, Conv2D, Cropping2D
