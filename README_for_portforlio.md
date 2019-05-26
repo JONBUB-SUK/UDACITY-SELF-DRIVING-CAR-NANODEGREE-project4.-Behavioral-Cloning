@@ -126,13 +126,17 @@ Validation loss : 0.0171
 
 #### 3) Adding left, right camera images to LeNet
 
+I added not only center camera images, but also right, left camera images
+
 This code have at least 2 benefits 
 
-Firstly, We can get 3 times more data - Almost 8000 images 24000 images 
+Firstly, We can get 3 times more data - Before almost 8000 images to 24000 images 
+
+Large amount of data have benefits not to be overfitted
 
 Secondly, By adding images leaning toward left, right we can train car returning to center
 
-→  Use correction_factor plus minus steering angle
+`correction_factor ± steering angle`
 
 And surprisingly, by just adding left,right camera images made car drive through bridge well!
 
