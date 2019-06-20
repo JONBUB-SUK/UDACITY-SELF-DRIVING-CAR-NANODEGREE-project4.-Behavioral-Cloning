@@ -15,7 +15,7 @@
 
 ## 1. Introduction
 
-The object of this project is to drive car simulation autonomously by using Deep Learning
+The object of this project is to drive car simulator autonomously by using Deep Learning
 
 Simulation provide two modes (training , autonomous) and 3 cameras are attached in center, left side, right side of car
 
