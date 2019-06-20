@@ -19,7 +19,7 @@ The object of this project is to drive car simulator autonomously by using Deep 
 
 Simulation provide two modes (training , autonomous) and 3 cameras are attached in center, left side, right side of car
 
-Fistly, I had to done training mode at least 1 cycle of road
+Firstly, I had to done training mode at least 1 cycle of road
 
 By driving test mode, simulator saved my steering action in csv file
 
