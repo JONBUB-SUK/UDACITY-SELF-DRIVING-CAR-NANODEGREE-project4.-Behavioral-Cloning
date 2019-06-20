@@ -441,7 +441,7 @@ So even after passing 1 level, multiplying weight, it has so large difference
 
 It has effect to emphasize difference between neighbor pixels
 
-In effect, doing normalization or not hadbig difference
+In effect, doing normalization or not had big difference
 
 
 #### 4) About cropping
@@ -454,7 +454,7 @@ If I used not cropped image in this project,
 
 model learned data from image that has background, and it think I had to turn left exactly in this situation (of course it cannot think)
 
-So by apply cropping, it can work more generally
+So by applying cropping, it can work more generally
 
 
 #### 5) Small parameters
@@ -472,13 +472,13 @@ In this project, I cannot control velocity
 
 The only factor I can control was steering angle at background image
 
-But thinking in real driving situation, if someone want to sharp turn, he may firstly slow down car speed
+But thinking in real driving situation, if someone wants to sharp turn, he may firstly slow down car speed
 
 So fundamentally this simulator has limit to sharp turn
 
 If dealing with especially sharp turn by using this model,
 
-it will need other method like enlarge steering angle parameters..
+it will need other method like enlarging steering angle parameters..
 
 
 #### 7) Convenience of Keras compared to Tensorflow
