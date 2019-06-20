@@ -15,7 +15,7 @@
 
 ## 1. Introduction
 
-The object of this project is drive car simulation autonomously by using deeplearning
+The object of this project is to drive car simulation autonomously by using Deep Learning
 
 Simulation provide two modes (training , autonomous) and 3 cameras are attached in center, left side, right side of car
 
@@ -23,13 +23,13 @@ Fistly, I had to done training mode at least 1 cycle of road
 
 By driving test mode, simulator saved my steering action in csv file
 
-So after one lap, I've got important information that what kind of background I turned steering
+So after one lap, I've got important information that at which kind of background I turned steering
 
 After one lap, there are almost 24,000 images (including left & right images) with its steering angle informations
 
 I used KERAS deep learning framework to make my model learn
 
-After trying various deeplearning models and methods, finally my car drove so well, even not get out of center line
+After trying various Deep Learning models and methods, finally my car drove so well, even not getting out of center line
 
 
 ## 2. Related Study
@@ -61,7 +61,7 @@ I did not expect good result
 
 I thought car trained by this model will just stagger left and right
 
-But unexpectively it somehow drives well
+But unexpectively it somehow drove well
 
 Of course it need further reinforcement
 
@@ -130,11 +130,11 @@ I added not only center camera images, but also right, left camera images
 
 This code have at least 2 benefits 
 
-Firstly, We can get 3 times more data - Before almost 8000 images to 24000 images 
+Firstly, I can get 3 times more data - Before almost 8000 images to 24000 images 
 
 Large amount of data have benefits not to be overfitted
 
-Secondly, By adding images leaning toward left, right we can train car returning to center
+Secondly, By adding images leaning toward left, right I can train car returning to center
 
 `steering angle = correction_factor ± steering angle`
 
