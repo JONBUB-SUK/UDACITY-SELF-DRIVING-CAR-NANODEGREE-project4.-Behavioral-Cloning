@@ -426,7 +426,7 @@ If it drove out of line, it cannot return to line, because it has no data to ret
 
 I have got trouble trying various model to drive normally (I think it maybe easy)
 
-And just using varified NVIDIA's architecture and parameter, it drove surprrisingly well
+And just using varified NVIDIA's architecture and parameter, it drove surprisingly well
 
 That is trained and tuned at real environment and it worked so well at similar situation
 
